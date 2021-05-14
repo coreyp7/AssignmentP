@@ -149,8 +149,8 @@ class AssignmentList:
             for day in each_class.due:
                 if str(day) == str(day_name):
                     assignments_today.append(each_class)
-                    print(f"added {each_class} on {day} {date}")
-                    print(str(type(each_class)))
+                    # print(f"added {each_class} on {day} {date}")
+                    # print(str(type(each_class)))
         return assignments_today
 
     def find_day(self, date):
@@ -292,12 +292,12 @@ class AssignmentList:
             date = assignments.pop(0)
 
         for assignment in assignments:
-            print(str(type(assignment)))
+            # print(str(type(assignment)))
             if assignment.time.split(" ")[1] == "am":
-                print(f"{assignment} added to am")
+                # print(f"{assignment} added to am")
                 am_list.append(assignment)
             else:
-                print(f"{assignment} added to pm")
+                # print(f"{assignment} added to pm")
                 pm_list.append(assignment)
 
         before_ten_am_list = []
@@ -307,12 +307,12 @@ class AssignmentList:
 
         for i in am_list:
             if int(i.time.split(" ")[0].split(":")[0]) < 10:
-                print(f"{int(i.time.split(':')[0])} <= 10")
-                print(f"{i.time} added to before 10am")
+                # print(f"{int(i.time.split(':')[0])} <= 10")
+                # print(f"{i.time} added to before 10am")
                 before_ten_am_list.append(i)
             else:
-                print(int(i.time.split(" ")[0].split(":")[0]))
-                print(f"{i.time} added to after 10am")
+                # print(int(i.time.split(" ")[0].split(":")[0]))
+                # print(f"{i.time} added to after 10am")
                 after_ten_am_list.append(i)
 
         for i in pm_list:
@@ -363,16 +363,14 @@ class AssignmentList:
                     # timejj13 = int(f"{str(timejj12[0])}{str(timejj12[1])}")
 
                     if timej12 > timejj12:
-                        print(f"SWITCHING {timej12}  {timejj12}")
+                        # print(f"SWITCHING {timej12}  {timejj12}")
                         arr[j], arr[j + 1] = arr[j + 1], arr[j]
             sorted_list += arr
-            for i in arr:
-                print(i)
 
         if date != "":
             sorted_list.insert(0, date)
 
-        print(f"THE SORTED LIST IS : {sorted_list}")
+        # print(f"THE SORTED LIST IS : {sorted_list}")
         return sorted_list
 
     def switch_month(self, month=int):
